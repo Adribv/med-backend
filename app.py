@@ -65,5 +65,10 @@ def get_recommendations():
     recommendations = recommend_tablets(tablet_name)
     return jsonify({'tablet_name': tablet_name, 'recommendations': recommendations})
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({"message": "Service is live!"}), 200
+
+
 if __name__ == '__main__':
     app.run(debug=True)
